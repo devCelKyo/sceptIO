@@ -1,0 +1,66 @@
+html, body {
+    min-height: 100%;
+}
+body {
+    background: rgb(89,0,124);
+    background: linear-gradient(180deg, rgba(89,0,124,1) 0%, rgba(90,43,171,1) 42%, rgba(206,153,255,1) 100%);
+    font-family: Comfortaa;
+}
+#red-wrapper {
+    height:100%;
+    width:100%;
+    position: absolute;
+    top:-100%;
+    left:0;
+    background-color: rgb(140, 0, 255);
+}
+#main-page-logo-container {
+    display: flex;
+    justify-content: center;
+}
+#app {
+    display:flex;
+    justify-content: center;
+}
+.page {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.subtitle {
+    color:white;
+    text-align: center;
+}
+
+@font-face {
+    font-family: Comfortaa;
+    src: url(fonts/Comfortaa.ttf);
+}
+.main-button {
+    font-family: Comfortaa;
+    border: none;
+    border-radius: 10px;
+    padding-top: 1%;
+    padding-bottom: 0.5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    font-size: 2rem;
+    color: white;
+    background-color: rgb(140, 187, 248);
+    box-shadow: 3px -8px 6px -1px rgba(0,0,0,0.75);
+}
+.text-style-1 {
+    color: white;
+    font-weight: bold;
+    font-size:1.8rem;
+}
+#hello-page-content {
+    margin-top: 8%;
+}
+#hello-page-text {
+    display: flex;
+    justify-content: flex-start;
+}
+.adjacent-page-button {
+    float: right;
+    border-radius:100%;
+}
