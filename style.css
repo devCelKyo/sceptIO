@@ -5,6 +5,7 @@ body {
     background: rgb(89,0,124);
     background: linear-gradient(180deg, rgba(89,0,124,1) 0%, rgba(90,43,171,1) 42%, rgba(206,153,255,1) 100%);
     font-family: Comfortaa;
+    color: white;
 }
 #red-wrapper {
     height:100%;
@@ -63,4 +64,34 @@ body {
 .adjacent-page-button {
     float: right;
     border-radius:100%;
+}
+#quizz-threshold {
+    display: grid;
+    color: black;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto;
+    margin-left:10%;
+    margin-right: 10%;
+}
+#question-threshold {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+.reponse-threshold {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1%;
+    transition: box-shadow 0.5s, transform 0.2s;
+}
+.reponse-threshold:hover {
+    box-shadow: 0px 0px 23px 1px rgba(145,248,255,1);
+    cursor: pointer;
+}
+.reponse-threshold:active {
+    transform: scale(1.05);
 }
