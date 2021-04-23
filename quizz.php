@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
     <title>Quizz</title>
@@ -8,7 +10,8 @@
 </head>
 
 <body>
-    <h1>Questions</h1>
+    <h1>Questions - Logged in as <?php if (!isset($_SESSION['id'])) { echo 'Anon'; ?> <h2><a href="login.php">Se connecter</a></h2> <?php } else { echo $_SESSION['pseudo']; 
+    ?> <h2><a href="php/logout.php">Se déconnecter</a></h2> <?php } ?></h1>
     <div id="quizz-threshold">
         <div id="question-threshold">
             <h2 id="question">Question</h2>
