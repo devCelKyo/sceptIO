@@ -36,4 +36,12 @@ function check_reponse($bdd, $id) {
         return false;
     }
 }
+
+function get_experience($bdd, $id_reponse) {
+    $req = $bdd->prepare('SELECT * FROM questions, reponses WHERE questions.id = reponses.id_question AND reponses.id = ? LIMIT 1');
+    $req->execute(array($id_reponse));
+    $data = $req->fetch();
+    
+    return $data['experience'];
+}
 ?>

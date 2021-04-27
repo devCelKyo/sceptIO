@@ -22,6 +22,11 @@ function checkReponse(id) {
             function(data) {
                 var retour = data.retour;
                 if (retour == "true") {
+                    if (data.logged == "true") {
+                        document.getElementById('xp-bar').style.width = data.new_xp + "%";
+                        document.getElementById('xp-bar').setAttribute('aria-valuenow', data.new_xp);
+                        document.getElementById('lvl').innerHTML = data.new_lvl;
+                    }
                     Swal.fire({
                         icon: 'success',
                         text: 'Bonne réponse !',
@@ -45,7 +50,6 @@ loadQuizz();
 $('.reponse-threshold').click(function() {
     var reponse = $(this);
     var id = reponse.find('h3').attr('id-reponse');
-    console.log(id);
     checkReponse(id);
 })
 

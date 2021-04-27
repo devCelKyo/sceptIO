@@ -44,7 +44,6 @@ else {
     
         $data = $req->fetch();
         $_SESSION['user'] = new User($data);
-        $_SESSION['user'] = serialize($_SESSION['user']);
         header('Location: ../quizz.php');
     }
 }
