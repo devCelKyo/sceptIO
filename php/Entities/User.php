@@ -22,6 +22,11 @@ class User {
         $req->execute(array($this->pseudo, $this->password, $this->email, $this->niveau, $this->experience, $this->id));
     }
 
+    public function setPlainPassword($bdd, $password) {
+        $this->password = password_hash($password, PASSWORD_DEFAULT);
+        $this->persist($bdd);
+    }
+
     public function giveExp($bdd, $exp) {
         $this->experience += $exp;
         $this->checkLevel($bdd);

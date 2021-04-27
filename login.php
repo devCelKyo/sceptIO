@@ -4,9 +4,34 @@
     <link rel="stylesheet" href="bootstrap.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <?php 
+    if (isset($_GET['error'])) {
+      if ($_GET['error'] == 1) {
+        $error = 'Ce compte n\'existe pas.';
+      }
+      else if ( $_GET['error'] == 2) {
+        $error = 'Mot de passe incorrect!';
+      }
+      else {
+        $error = 'Code d\'erreur inconnu.';
+      }
+    ?>
+    <script>
+      $(document).ready(function() {
+        Swal.fire({
+          icon: 'error',
+          text: "<?php echo $error; ?>" 
+        });
+      });
+    </script>
+    <?php
+    }
+    ?>
 </head>
 
 <body>
+
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
@@ -14,7 +39,7 @@
     <!-- Login Form -->
     <form method="post" action="php/login_check.php">
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
       <input type="submit" class="fadeIn fourth" value="Connexion">
     </form>
 
